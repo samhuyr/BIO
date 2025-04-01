@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Bio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Recoverists Portal</title>
+    <link rel="stylesheet" href="C:\Users\VAIDIK\Downloads\Bɪᴏ Sɪᴛᴇ [  MʀSam ]\Bɪᴏ Sɪᴛᴇ [  MʀSam ]\style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Embed Do DC -->
-    <meta content="Sam Bio" property="og:title" />
-    <meta content="Bio Site Of Sam" property="og:description" />
+    <meta content="Recoverists Portal" property="og:title" />
+    <meta content="About Recoverists" property="og:description" />
     <meta content="localhost" property="og:url" />
-    <meta content="https://i.postimg.cc/JhdBss7b/photo-6215527154825936520-y.jpg" />
+    <meta content="https://i.postimg.cc/C5JSrY3y/Whats-App-Image-2025-03-31-at-12-19-14-PM.jpg" />
     <meta content="#000000" data-react-helmet="true" name="theme-color" />
 
     <style>
         /* General styles */
-
+  
     </style>
 </head>
 <body>
     <!-- Background Video -->
     <div class="video-container">
         <video autoplay muted loop>
-            <source src="Damn.mp4" type="video/mp4" />
+            <source src="C:\Users\VAIDIK\Downloads\Bio\Damnhyrr-1.mp4" type="video/mp4" />
         </video>
         <!-- Background Music -->
-        <audio id="bgMusic" loop>
-            
-            <source src="Damn.mp4" type="audio/mpeg" />
+        <audio id="bgMusic" autoplay loop>
+            <source src="C:\Users\VAIDIK\Downloads\Bio\Shakira!.m4a" type="audio/mpeg" />
         </audio>
     </div>
 
@@ -39,27 +38,31 @@
             <div class="card">
                 <!-- Logo -->
                 <div class="logo">
-                    <img src="https://i.postimg.cc/zv6VLhF9/photo-6215527154825936550-y.jpg" alt="Logo">
+                    <img src="https://i.postimg.cc/C5JSrY3y/Whats-App-Image-2025-03-31-at-12-19-14-PM.jpg" alt="Logo">
                 </div>
                 <!-- Name -->
-                <div class="nick">SAM</div>
+                <div class="nick">Recoverists</div>
                 <!-- Links -->
                 <div class="icon-links">
                 <!-- <div class="icon-links" style="margin-top: 60%;"> -->
-                    <a href="https://t.me/b7man" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.youtube.com/@samhuyrr" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://t.me/recoverists" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.youtube.com/@RECOVERISTSAGENCY" target="_blank"><i class="fab fa-youtube"></i></a>
                     <a href="https://github.com/samhuyr" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/3a7man" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.discord.com/users/864213870494220341" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.instagram.com/recoverists" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.discord.com/users/1236049958650515482" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="https://wa.me/16723664040" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:Recoverists@outlook.in" target="_blank"><i class="fas fa-envelope"></i>
+                    </a>
+                      
                 </div>
                 <!-- Song Card -->
                 <div class="song-card">
                     <div class="song-cover">
-                        <img src="https://i.postimg.cc/HxSJgRcW/photo-6132067839956336517-y.jpg" alt="Okładka">
+                        <img src="https://i.postimg.cc/HnQ0Mv8P/Whats-App-Image-2025-03-31-at-12-26-53-PM.jpg" alt="Okładka">
                     </div>
                     <div class="song-info">
-                        <div class="song-title">Sam</div>
-                        <div class="song-author">Devoloper × Programmer x Student</div>
+                        <div class="song-title">RECOVERISTS</div>
+                        <div class="song-author">Recoverists Agency</div>
                     </div>
                     <div class="card-glow"></div>                          
                 </div>
@@ -69,7 +72,7 @@
 
     <!-- Audio Control Button -->
     <div class="audio-control" id="audioControl">
-        <div class="audio-icon" id="audioIcon"><i class="fas fa-volume-up"></i></div>
+        <div class="audio-icon" id="audioIcon"><i class="fas fa-volume-mute"></i></div>
         <div class="audio-text" id="audioText">Tap To Play Music</div>
     </div>
 
@@ -78,37 +81,42 @@
         const audioControl = document.getElementById('audioControl');
         const audioIcon = document.getElementById('audioIcon');
         const audioText = document.getElementById('audioText');
-
-        let isPlaying = false;
-
-       // Function to toggle audio play/pause
+    
+        let isPlaying = false; // Initially set to false
+    
+        // Function to start audio playback after user interaction
+        function startAudio() {
+            bgMusic.muted = false; // Unmute the audio
+            bgMusic.play().catch(error => {
+                console.log('Autoplay blocked:', error);
+            });
+            isPlaying = true; // Update state to playing
+            audioIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+            audioText.innerHTML = 'Tap To Pause Music';
+        }
+    
+        // Function to toggle audio play/pause
         function toggleAudio() {
             if (isPlaying) {
                 bgMusic.pause();
-                audioIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
-            } else {
-                bgMusic.play();
                 audioIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+                audioText.innerHTML = 'Tap To Play Music';
+            } else {
+                bgMusic.play().catch(error => {
+                    console.log('Audio play failed:', error);
+                });
+                audioIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                audioText.innerHTML = 'Tap To Pause Music';
             }
             isPlaying = !isPlaying;
-             }
-
-        // Function to animate text
-        function animateText() {
-            audioText.classList.add('active');
-            setTimeout(() => {
-                audioText.classList.remove('active');
-            }, 1000);
-
-            // Repeat animation every 5 seconds
-            setTimeout(animateText, 5000);
         }
-
-        // Initial call to animate text
-        animateText();
-
-        // Add click event listener to toggle audio
+    
+        // Add click event listener for user interaction to start playback
+        window.addEventListener('click', startAudio);
+    
+        // Add click event listener to toggle audio play/pause
         audioControl.addEventListener('click', toggleAudio);
     </script>
+    
 </body>
 </html>
